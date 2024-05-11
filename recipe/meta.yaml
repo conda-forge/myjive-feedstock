@@ -1,5 +1,5 @@
 {% set name = "myjive" %}
-{% set version = "0.1.6" %}
+{% set version = "0.1.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/myjive-{{ version }}.tar.gz
-  sha256: 91ec0f08d9ff2065f84c48805c84a42bc3193812a66fc1f54c4e24aa43d191df
+  sha256: 762f650c79782969d1d823122a7f44c6dd94df8e7a388d7425737e7b15d39153
 
 build:
   noarch: python
