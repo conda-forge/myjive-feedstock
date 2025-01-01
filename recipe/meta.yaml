@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "myjive" %}
 {% set version = "0.1.8" %}
 
@@ -6,20 +7,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/myjive-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/myjive-{{ version }}.tar.gz
   sha256: 8f5545c3960521024d0c844480452e14a74ec1eba0be2113e1edbbbcf92d31f4
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.10,<3.11
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.10,<3.11
+    - python >={{ python_min }},<3.11
     - matplotlib-base ==3.5.2
     - numba ==0.56.4
     - numpy ==1.23.5
@@ -34,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://gitlab.tudelft.nl/apoot1/myjive
