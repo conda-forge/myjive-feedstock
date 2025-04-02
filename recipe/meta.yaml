@@ -39,6 +39,7 @@ test:
     - pip
 
 about:
+  home: https://gitlab.tudelft.nl/apoot1/myjive
   summary: Personal implementation of jive C++ library in Python
   license: MIT
   license_file: LICENSE.txt
