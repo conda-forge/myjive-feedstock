@@ -3,7 +3,7 @@ About myjive-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/myjive-feedstock/blob/main/LICENSE.txt)
 
-Home: https://gitlab.tudelft.nl/apoot1/myjive
+
 
 Package license: MIT
 
