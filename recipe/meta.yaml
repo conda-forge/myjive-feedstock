@@ -1,13 +1,13 @@
 {% set name = "myjive" %}
-{% set version = "0.1.8" %}
+{% set version = "0.1.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/myjive-{{ version }}.tar.gz
-  sha256: 8f5545c3960521024d0c844480452e14a74ec1eba0be2113e1edbbbcf92d31f4
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/myjive-{{ version }}.tar.gz
+  sha256: ae0bcdf8cc7c6b00b4dddf8158eedcc0a4066290990ca6754d8a201515fdf01a
 
 build:
   noarch: python
@@ -17,14 +17,17 @@ build:
 requirements:
   host:
     - python >=3.10,<3.11
+    - setuptools >=42
+    - wheel
     - pip
   run:
     - python >=3.10,<3.11
-    - matplotlib-base ==3.5.2
-    - numba ==0.56.4
-    - numpy ==1.23.5
-    - scikit-sparse ==0.4.12
-    - scipy ==1.8.1
+    - matplotlib-base
+    - numba
+    - numpy
+    - pandas
+    - scikit-sparse >=0.4.12
+    - scipy >=1.12
 
 test:
   imports:
