@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "myjive" %}
 {% set version = "0.1.14" %}
 
@@ -12,16 +13,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.10,<3.11
+    - python {{ python_min }}
     - setuptools >=42
     - wheel
     - pip
   run:
-    - python >=3.10,<3.11
+    - python >={{ python_min }},<3.11
     - matplotlib-base
     - numba
     - numpy <2.0.0
@@ -37,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://gitlab.tudelft.nl/apoot1/myjive
