@@ -1,5 +1,5 @@
 {% set name = "myjive" %}
-{% set version = "0.1.11" %}
+{% set version = "0.1.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/myjive-{{ version }}.tar.gz
-  sha256: ae0bcdf8cc7c6b00b4dddf8158eedcc0a4066290990ca6754d8a201515fdf01a
+  sha256: 24afe84b8db83bc51448c92ad8eb396e801a6abf10801058352c791f7e3d9518
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - python >=3.10,<3.11
     - matplotlib-base
     - numba
-    - numpy
+    - numpy <2.0.0
     - pandas
     - scikit-sparse >=0.4.12
     - scipy >=1.12
